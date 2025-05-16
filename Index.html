@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+<script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+<script>
+    window.Offer18WebSDK.initializeConversion('clickid');
+</script>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        /* Product Grid */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Product Styling */
+        .product {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Buttons */
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background: #007bff;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Cart Styling */
+        #cart {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart li {
+            background: white;
+            padding: 8px;
+            margin: 5px auto;
+            border-radius: 5px;
+            width: 250px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Shop</h1>
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product">
+            <h2>Product 1</h2>
+            <p>Price: $10.00</p>
+            <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product">
+            <h2>Product 2</h2>
+            <p>Price: $15.00</p>
+            <button onclick="addToCart('Product 2', 15)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h2>Your Cart</h2>
+    <ul id="cart"></ul>
+    <button onclick="checkout()">Checkout</button>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById("cart");
+            cartList.innerHTML = "";
+            cart.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = `${item.name} - $${item.price}`;
+                cartList.appendChild(li);
+            });
+        }
+
+        function checkout() {
+            window.location.href = "thankyou.html";
+        }
+    </script>
+
+</body>
+</html>
