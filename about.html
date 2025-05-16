@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thank You for Your Purchase!</h1>
+    <p>Your order has been successfully processed.</p>
+    <a href="index.html">Back to Shop</a>
+
+  <script>
+    window.Offer18WebSDK.trackConversion({
+        domain: 'simransim.o18.link',
+        accountId: '7261',
+        offerId: '21638423',
+        coupon: '', 
+        postbackType: '', // 'iframe' or 'pixel'
+        isGlobalPixel: false, // true or false
+        allowMultiConversion: false, // true or false
+        conversionData: {
+            event: '', // Event Name (Please specify the event)
+            payout: '', // Payout Amount (Please specify the payout amount)
+            sale: '', // Sale Amount (Please specify the sale amount)
+            currency: '',
+            adv_sub1: '',
+            adv_sub2: '',
+            adv_sub3: '',
+            adv_sub4: '',
+            adv_sub5: '',
+        }
+    })
+</script>
+
+    <!-- Tracking Pixel Fires on Page Load -->
+ <!--   <script>
+        var img = new Image();
+        img.src = "https://ddddddd.o18.link/p?m=00000&t=i&gb=1";
+        document.body.appendChild(img);
+    </script>  -->
+
+</body>
+</html>
